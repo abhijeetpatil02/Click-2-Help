@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar always visible */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #2ecc71;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    z-index: 1000;
+}
+
+.menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    margin-right: 15px;
+}
+
+.title {
+    color: white;
+    font-size: 18px;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 50px;           
+    left: -250px;
+    width: 250px;
+    height: calc(100% - 50px);
+    background-color: #2ecc71;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.side-menu.show {
+    left: 0;
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    background-color: #35af68;
+}
