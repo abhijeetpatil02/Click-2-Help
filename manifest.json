@@ -1,6 +1,6 @@
 {
-  "name": "Voice SOS Emergency App",
-  "short_name": "Voice SOS",
+  "name": "Click-2-Help",
+  "short_name": "C2H",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#e60000",
