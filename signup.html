@@ -1,36 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Signup</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+    }
+
+    .container {
+      background: #fff;
+      width: 100%;
+      max-width: 380px;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #4facfe;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #358df1;
+    }
+
+    .toggle-text {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .toggle-text span {
+      color: #4facfe;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    form {
+      display: none;
+    }
+
+    form.active {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container {
+        margin: 10px;
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Create your Account</h2>
-        <form action="">
-            <div class="form-contain">
-                <label for="name">UserName</label>
-                <input type="text" name="username" placeholder="Enter your Name">
-            </div>
-            <div class="form-contain">
-                <label for="email">Email</label>
-                <input type="email" name="email" placeholder="Enter your Email">
-            </div>
-            <div class="form-contain">
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Enter your Password">
-            </div>
-            <div class="form-contain">
-                <label for="confirm">Confirm Password</label>
-                <input type="password" name="confirm" placeholder="Confirm the Password">
-            </div>
-            <button type="button">SignUp</button>
-            <div class="login-link">
-                <p>Already have an Account <a href="#">Login</a></p>
-            </div>
-        </form>
-    </div>
+
+  <div class="container">
+
+    <!-- Login Form -->
+    <form id="loginForm" class="active">
+      <h2>Login</h2>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter email" required />
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required />
+      </div>
+      <button class="btn" type="submit">Login</button>
+      <div class="toggle-text">
+        Don't have an account? <span onclick="showSignup()">Sign Up</span>
+      </div>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signupForm">
+      <h2>Sign Up</h2>
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter full name" required />
+      </div>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter email" required />
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" placeholder="Create password" required />
+      </div>
+      <button class="btn" type="submit">Sign Up</button>
+      <div class="toggle-text">
+        Already have an account? <span onclick="showLogin()">Login</span>
+      </div>
+    </form>
+
+  </div>
+
+  <script>
+    function showSignup() {
+      document.getElementById('loginForm').classList.remove('active');
+      document.getElementById('signupForm').classList.add('active');
+    }
+
+    function showLogin() {
+      document.getElementById('signupForm').classList.remove('active');
+      document.getElementById('loginForm').classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
